@@ -1,5 +1,5 @@
 <?php
-
+define('DS', DIRECTORY_SEPARATOR);
 include __DIR__ . '/lib/functions.php';
 include __DIR__ . '/classes/SplClassLoader.php';
 include 'Net/URL/Mapper.php';
