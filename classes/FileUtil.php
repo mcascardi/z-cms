@@ -1,8 +1,26 @@
 <?php
+/**
+ * File Util Class File
+ *
+ * Defines the FileUtil class
+ *
+ * PHP Version 5
+ *
+ * @since 0.1
+ */
 
+/**
+ * FileUtil Class Definition
+ *
+ * File Utility class
+ * 
+ * @since 0.1
+ */
 class FileUtil {
 
   /**
+   * List Files
+   *
    * Finds path, relative to the given root folder, of all files and
    * directories in the given directory and its sub-directories non
    * recursively.
@@ -15,8 +33,10 @@ class FileUtil {
    *
    * 
    * @author sreekumar
+   * @since 0.1
    * @param string $root
-   * @result array
+   * @param bool $readHidden
+   * @return array
    */
   function listFiles($root = '.', $readHidden = false)
   {
@@ -55,7 +75,15 @@ class FileUtil {
     }
     return $files;
   }
-  
+
+  /**
+   * Include All
+   *
+   * Includes all files under a given path.
+   *
+   * @param $path
+   * @since 0.1
+   */ 
   function includeAll($path) {
     foreach (self::listFiles($path) as $file) {
       include $file;

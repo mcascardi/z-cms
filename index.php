@@ -1,13 +1,18 @@
 <?php
+/**
+ * Index file
+ * 
+ * Loads the bootstrap file which sets the up application. Takes the
+ * requested path from the server request URI or the command line and
+ * outputs the content.
+ *
+ * PHP Version 5
+ *
+ * @since 0.1
+ */
 
-require_once  __DIR__ . DS . 'bootstrap.php';
+require_once  __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 $request = ((PHP_SAPI === 'cli')  ? $argv[1]: $_SERVER['REQUEST_URI']);
-
-//Detect development server
-if (strpos($_SERVER['SERVER_SOFTWARE'], 'Development Server') !== false) {
-    $basepath = substr($_SERVER['DOCUMENT_ROOT'], 3);
-    $request = str_replace($basepath, '', $request);
-}
 
 $path = $router->match($request);
 

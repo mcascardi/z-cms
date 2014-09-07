@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Default Route configuration
+ *
+ * Maps a clean url for each content file found in the 'z' folder.
+ *
+ * @since 0.1
+ */
 global $router;
 
 $router->connect('/', array('index.php'));
